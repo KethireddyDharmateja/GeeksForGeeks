@@ -1,0 +1,27 @@
+ public static void segregateElements(int arr[], int n)
+    {
+        int[] tempArr = new int[n];
+        int j = 0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i] > 0)
+                tempArr[j++] = arr[i];
+        }
+
+        if(j == n || j == 0)
+            return;
+
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i] < 0)
+                tempArr[j++] = arr[i];
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = tempArr[i];
+        }
+
+        //T.C: O(n)
+        //S.C: O(n)
+    }
