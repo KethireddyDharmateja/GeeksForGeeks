@@ -1,0 +1,10 @@
+s = "dharmateja reddy kethi reddy"
+
+s1 = ' '.join(s.split()[::-1])
+
+print(s)
+print(' '.join(s.split()[::-1]))
+
+print(''.join(s[::-1]))
+
+print(''.join(s1[::-1]))
