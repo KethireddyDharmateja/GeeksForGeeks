@@ -1,0 +1,33 @@
+# Number of substrings of one string present in other
+# Last Updated : 07 Oct, 2022
+# Suppose we are given a string s1, we need to the find total number of substring(including multiple occurrences of the same substring) of s1 which are present in string s2. 
+
+# Examples: 
+
+# Input : s1 = aab
+#         s2 = aaaab
+# Output :6
+# Substrings of s1 are ["a", "a", "b", "aa", 
+# "ab", "aab"]. These all are present in s2. 
+# Hence, answer is 6.
+
+# Input :s1 = abcd
+#       s2 = swalencud
+# Output :3 
+
+def countsubstrings(s1, s2):
+    count = 0
+    for i in range(len(s1)):
+        s3 = ""
+        for j in range(i, len(s1)):
+            s3 = s3+s1[j]
+            # print(s3)
+            if s2.find(s3) != -1:
+                count = count+1
+    return count
+
+if __name__ == "__main__" :
+    s1 = "abcd"
+    s2 = "swalencud"
+    
+    print(countsubstrings(s1,s2))
