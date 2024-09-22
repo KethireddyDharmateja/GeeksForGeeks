@@ -1,0 +1,17 @@
+MAX_CHAR = 26
+
+def countPalindrome(str):
+    n = len (str)
+    sum = 0
+    hashTable = [0] * MAX_CHAR
+    for i in range(n):
+        hashTable[ord(str[i]) - ord('a')] += 1
+    for i in range(26) :
+        if (hashTable[i]):
+            sum += (hashTable[i] * (hashTable[i] + 1) // 2)
+    # print(hashTable)
+    return sum
+
+if __name__ == "__main__":
+    str = "abbcd"
+    print (countPalindrome(str))
